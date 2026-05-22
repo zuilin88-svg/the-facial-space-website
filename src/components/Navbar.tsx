@@ -32,60 +32,61 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-nav py-4' : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full border border-spa-blue flex items-center justify-center bg-white overflow-hidden shadow-sm group-hover:shadow-md transition-shadow">
-            <img
-              src="/brand/face-space-logo.jpg"
-              alt="The Facial Space logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <span className="font-serif text-xl tracking-wider text-spa-text group-hover:text-spa-blue-dark transition-colors">
-            The Facial Space
-          </span>
-        </a>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.filter((link) => link.name !== 'Home' && link.name !== 'Testimonials').map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium tracking-wide text-spa-text-light hover:text-spa-blue-dark transition-colors uppercase"
-            >
-              {link.name}
-            </a>
-          ))}
-          <a
-            href={LINKS.booking}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-spa-text text-white rounded-full text-sm font-medium tracking-wide uppercase hover:bg-spa-blue-dark transition-colors shadow-sm hover:shadow-md"
-          >
-            Book Now
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'glass-nav py-4' : 'bg-transparent py-6'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="w-12 h-12 rounded-full border border-spa-blue flex items-center justify-center bg-white overflow-hidden shadow-sm group-hover:shadow-md transition-shadow">
+              <img
+                src="/brand/face-space-logo.jpg"
+                alt="The Facial Space logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <span className="font-serif text-xl tracking-wider text-spa-text group-hover:text-spa-blue-dark transition-colors">
+              The Facial Space
+            </span>
           </a>
-        </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-spa-text p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Open menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.filter((link) => link.name !== 'Home' && link.name !== 'Testimonials').map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium tracking-wide text-spa-text-light hover:text-spa-blue-dark transition-colors uppercase"
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href={LINKS.booking}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-spa-text text-white rounded-full text-sm font-medium tracking-wide uppercase hover:bg-spa-blue-dark transition-colors shadow-sm hover:shadow-md"
+            >
+              Book Now
+            </a>
+          </nav>
 
-      {/* Mobile Menu */}
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden text-spa-text p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Open menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </motion.header>
+
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -93,7 +94,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden fixed inset-0 z-[60] bg-white text-spa-text"
+            className="md:hidden fixed inset-0 z-[100] h-dvh bg-white text-spa-text"
           >
             <div className="min-h-screen px-8 pt-12 pb-10 flex flex-col">
               <div className="flex items-center justify-between">
@@ -178,6 +179,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </>
   );
 }
