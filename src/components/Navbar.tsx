@@ -94,7 +94,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden fixed inset-0 z-[100] h-dvh bg-white text-spa-text"
+            className="md:hidden fixed inset-0 z-[100] h-dvh bg-spa-blue-light text-spa-text"
           >
             <div className="min-h-screen px-8 pt-12 pb-10 flex flex-col">
               <div className="flex items-center justify-between">
