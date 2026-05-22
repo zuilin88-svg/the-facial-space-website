@@ -6,14 +6,14 @@ export default function Hero() {
     <section className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden bg-white">
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero/spa-room.jpg"
+          src="/hero/face-hero.png"
           alt="The Facial Space studio interior"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center brightness-[1.08] saturate-[1.03]"
         />
-        <div className="absolute inset-0 bg-white/35"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.35)_0%,rgba(255,255,255,0.28)_34%,rgba(255,255,255,0.72)_100%)]"></div>
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white/95 via-white/70 to-transparent"></div>
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
+        <div className="absolute inset-0 bg-white/24"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.18)_36%,rgba(255,255,255,0.64)_100%)]"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white/90 via-white/58 to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white via-white/72 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
