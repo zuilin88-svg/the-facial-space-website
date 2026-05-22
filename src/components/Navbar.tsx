@@ -60,7 +60,7 @@ export default function Navbar() {
             href={LINKS.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-white text-spa-text rounded-full text-sm font-medium tracking-wide uppercase hover:bg-spa-blue-light transition-colors shadow-sm hover:shadow-md border border-white/80"
+            className="px-6 py-2.5 bg-spa-text text-white rounded-full text-sm font-medium tracking-wide uppercase hover:bg-spa-blue-dark transition-colors shadow-sm hover:shadow-md"
           >
             Book Now
           </a>
@@ -100,7 +100,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 px-6 py-3 bg-white text-spa-text rounded-full text-sm font-medium text-center uppercase tracking-wide border border-spa-silver"
+                className="mt-4 px-6 py-3 bg-spa-text text-white rounded-full text-sm font-medium text-center uppercase tracking-wide"
               >
                 Book Appointment
               </a>

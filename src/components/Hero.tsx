@@ -3,33 +3,17 @@ import { LINKS } from '../constants';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-white">
-      {/* Background Image & Overlay */}
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden bg-white">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-          alt="Spa treatment room"
-          className="w-full h-full object-cover object-center filter brightness-[1.1] saturate-[0.8]"
+          src="/hero/spa-room.jpg"
+          alt="The Facial Space studio interior"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
-        
-        {/* Soft floating gradients */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.5, 0.7, 0.5],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-spa-blue rounded-full mix-blend-multiply filter blur-[80px] opacity-60 z-0"
-        />
-        <motion.div
-          animate={{
-            x: [0, 30, 0],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-1/4 right-1/4 w-[35vw] h-[35vw] bg-spa-champagne rounded-full mix-blend-multiply filter blur-[80px] opacity-40 z-0"
-        />
+        <div className="absolute inset-0 bg-white/35"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.35)_0%,rgba(255,255,255,0.28)_34%,rgba(255,255,255,0.72)_100%)]"></div>
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white/95 via-white/70 to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -38,8 +22,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="inline-block py-1 px-4 rounded-full bg-white/60 text-spa-text-light text-xs font-medium uppercase tracking-widest mb-6 backdrop-blur-sm border border-white/50">
-            Welcome to The Facial Space
+          <span className="inline-block py-1.5 px-5 rounded-full bg-white/85 text-spa-text-light text-xs font-medium uppercase tracking-widest mb-7 backdrop-blur-sm border border-white shadow-sm">
+            East Meadow Facial Spa
           </span>
         </motion.div>
         
@@ -47,20 +31,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-serif text-spa-text leading-[1.15] mb-6"
+          className="text-5xl md:text-7xl lg:text-8xl font-serif text-spa-text leading-[1.02] mb-6"
         >
-          Personalized Skincare & <br className="hidden md:block"/>
-          <span className="italic text-spa-blue-dark">Facial Treatments</span> Designed <br className="hidden md:block"/>
-          For Your Skin Goals
+          The Facial Space
+          <span className="block italic text-spa-blue-dark mt-3">
+            personalized skincare
+          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-spa-text-light max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+          className="text-lg md:text-xl text-spa-text-light max-w-3xl mx-auto mb-12 font-light leading-relaxed"
         >
-          Customized facial experiences focused on skin health, glow, relaxation, and long-term results.
+          Acne care, dermaplaning, oxygen facials, LED therapy, and professional homecare in a calm East Meadow studio.
         </motion.p>
 
         <motion.div
@@ -73,21 +58,20 @@ export default function Hero() {
             href={LINKS.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 bg-white text-spa-text rounded-full text-sm font-medium uppercase tracking-wider hover:bg-spa-blue-light transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 border border-white/80"
+            className="w-full sm:w-auto px-9 py-4 bg-spa-text text-white rounded-full text-sm font-semibold uppercase tracking-wider hover:bg-spa-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Book Appointment
           </a>
           <a
             href="#services"
-            className="w-full sm:w-auto px-8 py-4 bg-white text-spa-text border border-white/80 rounded-full text-sm font-medium uppercase tracking-wider hover:bg-spa-blue-light transition-all duration-300 shadow-lg"
+            className="w-full sm:w-auto px-9 py-4 bg-white text-spa-text border border-white/80 rounded-full text-sm font-semibold uppercase tracking-wider hover:bg-spa-blue-light transition-all duration-300 shadow-lg"
           >
             Explore Services
           </a>
         </motion.div>
       </div>
 
-      {/* Decorative bottom wave or gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#fafafa] to-transparent z-10 pointer-events-none"></div>
     </section>
   );
 }
