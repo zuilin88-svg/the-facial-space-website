@@ -6,7 +6,7 @@ const products = [
     brand: "FACE REALITY",
     name: "Ultra Gentle Gel Cleanser",
     price: "$33.00",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "/products/ultra-gentle.jpg",
     bg: "bg-[#e8eceb]",
     link: "https://the-facial-space.square.site/product/ultra-gentle-gel-cleanser-face-reality-skincare/2?cp=true&sa=true&sbp=false&q=false"
   },
@@ -14,7 +14,7 @@ const products = [
     brand: "FACE REALITY",
     name: "Clearderma Moisturizer",
     price: "$33.00",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "/products/clearderma.jpg",
     bg: "bg-spa-blue-light",
     link: "https://the-facial-space.square.site/product/clearderma-moisturizer-face-reality-skincare/5?cp=true&sa=true&sbp=false&q=false"
   },
@@ -22,7 +22,7 @@ const products = [
     brand: "FACE REALITY",
     name: "Sal-C Toner",
     price: "$31.00",
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "/products/sal-c.jpg",
     bg: "bg-[#f4ebe6]",
     link: "https://the-facial-space.square.site/product/sal-c-toner-face-reality-skincare/9?cp=true&sa=true&sbp=false&q=false"
   }
@@ -56,13 +56,11 @@ export default function Products() {
             >
               <a href={product.link} target="_blank" rel="noopener noreferrer" className="block">
                 <div className={`${product.bg} aspect-[4/5] flex items-center justify-center p-12 relative overflow-hidden mb-6 transition-transform duration-500 group-hover:scale-[1.02]`}>
-                  {/* Note: Use real product images with transparent backgrounds */}
                   <div className="bg-white/40 absolute inset-0 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <img 
                     src={product.image} 
                     alt={product.name} 
                     className="w-full h-full object-contain relative z-10 drop-shadow-xl"
-                    style={{ mixBlendMode: 'multiply' }}
                   />
                 </div>
                 <div>
@@ -80,7 +78,7 @@ export default function Products() {
             href={LINKS.shopFaceReality} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 bg-spa-text text-white text-xs font-bold uppercase tracking-widest hover:bg-spa-blue-dark transition-colors text-center"
+            className="w-full sm:w-auto px-10 py-4 bg-white text-spa-text text-xs font-bold uppercase tracking-widest hover:bg-spa-blue-light transition-colors text-center border border-spa-silver shadow-sm"
           >
             Shop Face Reality
           </a>
@@ -88,7 +86,7 @@ export default function Products() {
             href={LINKS.shopGlymed} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 border border-spa-text text-spa-text text-xs font-bold uppercase tracking-widest hover:bg-spa-text hover:text-white transition-colors text-center"
+            className="w-full sm:w-auto px-10 py-4 bg-white border border-spa-silver text-spa-text text-xs font-bold uppercase tracking-widest hover:bg-spa-blue-light transition-colors text-center shadow-sm"
           >
             Shop Glymed
           </a>

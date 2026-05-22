@@ -17,9 +17,8 @@ export default function About() {
             {/* Decorative background shape */}
             <div className="absolute -inset-4 bg-spa-blue-light rounded-[32px] -z-10 transform -rotate-3"></div>
             <div className="aspect-[4/5] rounded-[24px] overflow-hidden shadow-xl">
-              {/* Note: In production, replace this with 'about face.JPG' */}
               <img 
-                src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="/about/about-face.jpg" 
                 alt="Meet your esthetician" 
                 className="w-full h-full object-cover"
               />
@@ -77,7 +76,7 @@ export default function About() {
                 href={LINKS.booking}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block border border-spa-text text-spa-text px-8 py-3 rounded-full text-sm font-medium uppercase tracking-widest hover:bg-spa-text hover:text-white transition-colors duration-300"
+                className="inline-block bg-white border border-white text-spa-text px-8 py-3 rounded-full text-sm font-medium uppercase tracking-widest hover:bg-spa-blue-light transition-colors duration-300 shadow-sm"
               >
                 Start Your Journey
               </a>

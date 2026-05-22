@@ -33,9 +33,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full border-2 border-spa-blue flex items-center justify-center bg-white text-spa-blue-dark font-serif text-xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow">
-            {/* Logo placeholder - text based for now, replace with true image if desired */}
-            <span className="opacity-80">fs</span>
+          <div className="w-12 h-12 rounded-full border border-spa-blue flex items-center justify-center bg-white overflow-hidden shadow-sm group-hover:shadow-md transition-shadow">
+            <img
+              src="/brand/face-space-logo.jpg"
+              alt="The Facial Space logo"
+              className="w-full h-full object-cover"
+            />
           </div>
           <span className="font-serif text-xl tracking-wider text-spa-text group-hover:text-spa-blue-dark transition-colors">
             The Facial Space
@@ -57,7 +60,7 @@ export default function Navbar() {
             href={LINKS.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-spa-text text-white rounded-full text-sm font-medium tracking-wide uppercase hover:bg-spa-blue-dark transition-colors shadow-sm hover:shadow-md"
+            className="px-6 py-2.5 bg-white text-spa-text rounded-full text-sm font-medium tracking-wide uppercase hover:bg-spa-blue-light transition-colors shadow-sm hover:shadow-md border border-white/80"
           >
             Book Now
           </a>
@@ -97,7 +100,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 px-6 py-3 bg-spa-text text-white rounded-full text-sm font-medium text-center uppercase tracking-wide"
+                className="mt-4 px-6 py-3 bg-white text-spa-text rounded-full text-sm font-medium text-center uppercase tracking-wide border border-spa-silver"
               >
                 Book Appointment
               </a>

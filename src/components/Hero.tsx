@@ -73,13 +73,13 @@ export default function Hero() {
             href={LINKS.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 bg-spa-text text-white rounded-full text-sm font-medium uppercase tracking-wider hover:bg-spa-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="w-full sm:w-auto px-8 py-4 bg-white text-spa-text rounded-full text-sm font-medium uppercase tracking-wider hover:bg-spa-blue-light transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 border border-white/80"
           >
             Book Appointment
           </a>
           <a
             href="#services"
-            className="w-full sm:w-auto px-8 py-4 bg-white/80 backdrop-blur-md text-spa-text border border-spa-blue-dark/20 rounded-full text-sm font-medium uppercase tracking-wider hover:bg-white transition-all duration-300"
+            className="w-full sm:w-auto px-8 py-4 bg-white text-spa-text border border-white/80 rounded-full text-sm font-medium uppercase tracking-wider hover:bg-spa-blue-light transition-all duration-300 shadow-lg"
           >
             Explore Services
           </a>
