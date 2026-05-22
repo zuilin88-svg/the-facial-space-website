@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { LINKS } from '../constants';
+import { Facebook, Instagram, MapPin, Menu, Phone, X } from 'lucide-react';
+import { CONTACT_INFO, LINKS } from '../constants';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,11 +16,20 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: 'Home', href: '#' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Results', href: '#results' },
     { name: 'Products', href: '#products' },
+    { name: 'Testimonials', href: '#testimonials' },
   ];
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <motion.header
@@ -47,7 +56,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {navLinks.filter((link) => link.name !== 'Home' && link.name !== 'Testimonials').map((link) => (
             <a
               key={link.name}
               href={link.href}
@@ -70,6 +79,7 @@ export default function Navbar() {
         <button
           className="md:hidden text-spa-text p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Open menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -79,32 +89,92 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-panel border-x-0 border-t-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden fixed inset-0 z-[60] bg-white text-spa-text"
           >
-            <nav className="flex flex-col px-6 py-6 space-y-4">
-              {navLinks.map((link) => (
+            <div className="min-h-screen px-8 pt-12 pb-10 flex flex-col">
+              <div className="flex items-center justify-between">
                 <a
-                  key={link.name}
-                  href={link.href}
+                  href="#"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-base font-medium text-spa-text py-2 border-b border-spa-blue-light"
+                  className="font-serif text-4xl tracking-wide text-spa-text"
                 >
-                  {link.name}
+                  The Facial Space
                 </a>
-              ))}
-              <a
-                href={LINKS.booking}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 px-6 py-3 bg-spa-text text-white rounded-full text-sm font-medium text-center uppercase tracking-wide"
-              >
-                Book Appointment
-              </a>
-            </nav>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 text-spa-text"
+                  aria-label="Close menu"
+                >
+                  <X size={38} strokeWidth={2} />
+                </button>
+              </div>
+
+              <nav className="flex-1 flex flex-col items-center justify-center gap-8 -mt-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-serif text-4xl text-spa-text hover:text-spa-blue-dark transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </nav>
+
+              <div className="flex flex-col items-center gap-8">
+                <div className="flex items-center justify-center gap-10 text-spa-text">
+                  <a
+                    href={LINKS.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="hover:text-spa-blue-dark transition-colors"
+                  >
+                    <Instagram size={34} strokeWidth={2.2} />
+                  </a>
+                  <a
+                    href={LINKS.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="hover:text-spa-blue-dark transition-colors"
+                  >
+                    <Facebook size={34} strokeWidth={2.2} />
+                  </a>
+                  <a
+                    href={LINKS.maps}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Google Maps"
+                    className="hover:text-spa-blue-dark transition-colors"
+                  >
+                    <MapPin size={34} strokeWidth={2.2} />
+                  </a>
+                  <a
+                    href={`tel:${CONTACT_INFO.phoneHref}`}
+                    aria-label="Call The Facial Space"
+                    className="hover:text-spa-blue-dark transition-colors"
+                  >
+                    <Phone size={34} strokeWidth={2.2} />
+                  </a>
+                </div>
+
+                <a
+                  href={LINKS.booking}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full max-w-[330px] bg-spa-text text-white py-5 text-center font-serif text-3xl hover:bg-spa-blue-dark transition-colors"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

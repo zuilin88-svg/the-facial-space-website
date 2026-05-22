@@ -29,11 +29,20 @@ export default function Footer() {
             <div className="space-y-4 text-sm text-gray-400">
               <p className="flex items-start gap-3">
                 <MapPin size={18} className="shrink-0 mt-0.5" />
-                <span>{CONTACT_INFO.address}</span>
+                <a
+                  href={LINKS.maps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-spa-blue-light transition-colors"
+                >
+                  {CONTACT_INFO.address}
+                </a>
               </p>
               <p className="flex items-center gap-3">
                 <Phone size={18} className="shrink-0" />
-                <span>{CONTACT_INFO.phone}</span>
+                <a href={`tel:${CONTACT_INFO.phoneHref}`} className="hover:text-spa-blue-light transition-colors">
+                  {CONTACT_INFO.phone}
+                </a>
               </p>
               <p className="flex items-center gap-3">
                 <span className="shrink-0 text-gray-500 font-serif italic text-lg leading-none">@</span>
@@ -41,7 +50,7 @@ export default function Footer() {
               </p>
               <div className="pt-4">
                 <a 
-                  href="https://maps.google.com/?q=1959+Front+St,+East+Meadow,+NY+11554" 
+                  href={LINKS.maps} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-spa-blue-dark text-xs uppercase tracking-widest hover:text-white transition-colors"

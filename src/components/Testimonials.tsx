@@ -21,7 +21,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
       {/* Decorative large text behind */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] font-serif text-spa-silver font-bold whitespace-nowrap opacity-50 z-0 pointer-events-none select-none">
         GLOWING
