@@ -14,19 +14,19 @@ const services = [
     image: "/services/advanced-acne.png",
   },
   {
-    title: "Glow Up Dermaplane Facial",
-    description: "Deep exfoliation removing dead skin and vellus hair for an immediate, intensely radiant glow and perfectly smooth texture.",
-    image: "/services/dermaplane.png",
-  },
-  {
-    title: "Reverse Aging Two-Step Facial",
-    description: "A powerful combination of peptides and clinical exfoliation designed to soften fine lines, rebuild lost collagen, and rejuvenate.",
-    image: "/services/two-step-facial.png",
+    title: "Acne Virtual Consult",
+    description: "Details coming soon.",
+    image: "/services/acne-initial.png",
   },
   {
     title: "Deep Pore Foaming O2 Facial",
     description: "An oxygenating treatment that deeply purifies pores, reduces congestion, and brings immediate brightness to dull, tired skin.",
     image: "/services/foaming-o2.png",
+  },
+  {
+    title: "Glow Up Dermaplane Facial",
+    description: "Deep exfoliation removing dead skin and vellus hair for an immediate, intensely radiant glow and perfectly smooth texture.",
+    image: "/services/dermaplane.png",
   },
   {
     title: "LED Light Therapy Add-On",

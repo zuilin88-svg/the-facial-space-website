@@ -10,63 +10,42 @@ export default function Hero() {
           alt="The Facial Space studio interior"
           className="w-full h-full object-cover object-center brightness-[1.08] saturate-[1.03]"
         />
-        <div className="absolute inset-0 bg-white/24"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.18)_36%,rgba(255,255,255,0.64)_100%)]"></div>
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white/90 via-white/58 to-transparent"></div>
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white via-white/72 to-transparent"></div>
+        <div className="absolute inset-0 bg-black/16"></div>
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white via-white/38 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <span className="inline-block py-1.5 px-5 rounded-full bg-white/85 text-spa-text-light text-xs font-medium uppercase tracking-widest mb-7 backdrop-blur-sm border border-white shadow-sm">
-            East Meadow Facial Spa
-          </span>
-        </motion.div>
-        
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-serif text-spa-text leading-[1.02] mb-6"
+          className="!font-sans text-5xl md:text-6xl lg:text-7xl font-bold !text-white tracking-normal leading-[1.06] mb-6 drop-shadow-sm"
         >
-          The Facial Space
-          <span className="block italic text-spa-blue-dark mt-3">
-            personalized skincare
-          </span>
+          Your clear skin era starts now
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-spa-text-light max-w-3xl mx-auto mb-12 font-light leading-relaxed"
+          className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-12 font-semibold leading-relaxed drop-shadow-sm"
         >
-          Acne care, dermaplaning, oxygen facials, LED therapy, and professional homecare in a calm East Meadow studio.
+          Expert Acne Care for teens and adults with over 90% success rate.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex items-center justify-center"
         >
           <a
             href={LINKS.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-9 py-4 bg-spa-text text-white rounded-full text-sm font-semibold uppercase tracking-wider hover:bg-spa-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="w-full sm:w-auto px-10 py-4 bg-spa-text text-white rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:bg-spa-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Book Appointment
-          </a>
-          <a
-            href="#services"
-            className="w-full sm:w-auto px-9 py-4 bg-white text-spa-text border border-white/80 rounded-full text-sm font-semibold uppercase tracking-wider hover:bg-spa-blue-light transition-all duration-300 shadow-lg"
-          >
-            Explore Services
           </a>
         </motion.div>
       </div>

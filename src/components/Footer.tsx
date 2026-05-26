@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="lg:pr-8">
             <h3 className="font-serif text-2xl mb-6 tracking-wide">The Facial Space</h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-8">
-              A premium facial spa dedicated to personalized, holistic skincare treatments that nurture skin and spirit.
+              Professional Acne Specialist offering customized clear skin programs for teen acne, adult acne, hormonal acne, and acne scars.
             </p>
             <div className="flex items-center gap-4">
               <a href={LINKS.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-spa-blue-dark hover:border-spa-blue-dark transition-colors">

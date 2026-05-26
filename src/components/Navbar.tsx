@@ -23,6 +23,11 @@ export default function Navbar() {
     { name: 'Products', href: '#products' },
     { name: 'Testimonials', href: '#testimonials' },
   ];
+  const desktopTextClass = isScrolled
+    ? 'text-spa-text hover:text-spa-blue-dark'
+    : 'text-white drop-shadow-sm hover:text-white/80';
+  const leftNavLinks = navLinks.filter((link) => ['Services', 'About', 'Results'].includes(link.name));
+  const rightNavLinks = navLinks.filter((link) => ['Products'].includes(link.name));
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
@@ -37,40 +42,72 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'glass-nav py-4' : 'bg-transparent py-6'
+        className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
+          isScrolled ? 'glass-nav border-white/30 py-4' : 'bg-transparent border-white/65 py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-full border border-spa-blue flex items-center justify-center bg-white overflow-hidden shadow-sm group-hover:shadow-md transition-shadow">
-              <img
-                src="/brand/face-space-logo.jpg"
-                alt="The Facial Space logo"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="font-serif text-xl tracking-wider text-spa-text group-hover:text-spa-blue-dark transition-colors">
-              The Facial Space
-            </span>
-          </a>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.filter((link) => link.name !== 'Home' && link.name !== 'Testimonials').map((link) => (
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-[1fr_auto_1fr] items-center gap-6">
+          <nav className="hidden md:flex items-center gap-9">
+            {leftNavLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium tracking-wide text-spa-text-light hover:text-spa-blue-dark transition-colors uppercase"
+                className={`text-xs font-bold uppercase tracking-[0.24em] transition-colors ${desktopTextClass}`}
               >
                 {link.name}
               </a>
             ))}
+          </nav>
+
+          <a href="#" className="flex items-center justify-self-center group">
+            <span
+              className={`whitespace-nowrap font-serif text-2xl tracking-wide transition-colors md:text-[32px] ${
+                isScrolled
+                  ? 'text-spa-text group-hover:text-spa-blue-dark'
+                  : 'text-white drop-shadow-sm group-hover:text-white/85'
+              }`}
+            >
+              The Facial Space
+            </span>
+          </a>
+
+          <nav className="hidden md:flex items-center justify-end gap-7">
+            {rightNavLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-xs font-bold uppercase tracking-[0.24em] transition-colors ${desktopTextClass}`}
+              >
+                Shop
+              </a>
+            ))}
+            <a
+              href={LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className={`transition-colors ${desktopTextClass}`}
+            >
+              <Instagram size={19} strokeWidth={1.9} />
+            </a>
+            <a
+              href={LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className={`transition-colors ${desktopTextClass}`}
+            >
+              <Facebook size={19} strokeWidth={1.9} />
+            </a>
             <a
               href={LINKS.booking}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-spa-text text-white rounded-full text-sm font-medium tracking-wide uppercase hover:bg-spa-blue-dark transition-colors shadow-sm hover:shadow-md"
+              className={`border px-7 py-3.5 text-xs font-bold uppercase tracking-[0.12em] transition-colors ${
+                isScrolled
+                  ? 'border-spa-text text-spa-text hover:bg-spa-text hover:text-white'
+                  : 'border-white text-white drop-shadow-sm hover:bg-white hover:text-spa-text'
+              }`}
             >
               Book Now
             </a>
@@ -78,7 +115,9 @@ export default function Navbar() {
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden text-spa-text p-2"
+            className={`md:hidden justify-self-end p-2 transition-colors ${
+              isScrolled ? 'text-spa-text' : 'text-white drop-shadow-sm'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Open menu"
           >

@@ -4,7 +4,8 @@ export const LINKS = {
   facebook: "https://www.facebook.com/p/The-Facial-Space-61561767781568",
   maps: "https://www.google.com/maps/search/?api=1&query=The%20Facial%20Space%201959%20Front%20St%20Suite%20305%20East%20Meadow%20NY%2011554",
   shopFaceReality: "https://the-facial-space.square.site/s/shop",
-  shopGlymed: "https://the-facial-space.square.site/glymed"
+  shopGlymed: "https://the-facial-space.square.site/glymed",
+  firstTreatmentOffer: ""
 };
 
 export const CONTACT_INFO = {
