@@ -8,14 +8,16 @@
   --color-spa-blue: #d7e8f0;
   --color-spa-blue-light: #f0f7f9;
   --color-spa-blue-dark: #a8cddc;
-  --color-spa-champagne: #fdfbf7;
+  --color-spa-cta: #4a94aa;
+  --color-spa-champagne: #f8fbfb;
+  --color-spa-off-white: #f7faf9;
   --color-spa-silver: #f4f5f5;
   --color-spa-text: #2c3338;
   --color-spa-text-light: #5f6c76;
 }
 
 body {
-  @apply text-spa-text bg-[#fafafa] font-sans antialiased;
+  @apply text-spa-text bg-spa-off-white font-sans antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {

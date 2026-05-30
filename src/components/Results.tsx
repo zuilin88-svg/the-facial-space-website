@@ -1,35 +1,83 @@
 import { motion } from 'motion/react';
+import { Instagram } from 'lucide-react';
+import { LINKS } from '../constants';
+
+const instagramPosts = [
+  {
+    image: '/instagram/instagram-01.jpg',
+    alt: 'The Facial Space client after facial experience Instagram post',
+  },
+  {
+    image: '/instagram/instagram-02.jpg',
+    alt: 'The Facial Space studio tour Instagram post',
+  },
+  {
+    image: '/instagram/instagram-03.jpg',
+    alt: 'The Facial Space real skin no filter facial Instagram post',
+  },
+  {
+    image: '/instagram/instagram-04.jpg',
+    alt: 'The Facial Space outfit of the day Instagram post',
+  },
+  {
+    image: '/instagram/instagram-05.jpg',
+    alt: 'The Facial Space studio booking tour Instagram post',
+  },
+  {
+    image: '/instagram/instagram-06.jpg',
+    alt: 'The Facial Space acne-safe skincare Instagram post',
+  },
+];
 
 export default function Results() {
   return (
-    <section id="results" className="py-24 bg-spa-blue-light/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-2xl mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif text-spa-text mb-4">
-            Real Skin Transformations
-          </h2>
-          <p className="text-spa-text-light">
-            Client result photos are temporarily disabled while we prepare updated real transformation images.
-          </p>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
+    <section id="instagram" className="border-y border-spa-blue-dark/45 bg-spa-off-white py-20">
+      <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-[24px] border border-spa-silver p-10 md:p-16 text-center shadow-sm"
+          className="!font-sans text-4xl font-bold tracking-normal !text-spa-blue-dark md:text-5xl"
         >
-          <span className="block uppercase tracking-widest text-xs font-semibold text-spa-blue-dark mb-4">
-            Coming Soon
-          </span>
-          <h3 className="text-3xl md:text-4xl font-serif text-spa-text mb-4">
-            Updated client results are on the way.
-          </h3>
-          <p className="max-w-2xl mx-auto text-spa-text-light leading-relaxed">
-            This space will feature real before-and-after photos once the new gallery is ready.
-          </p>
-        </motion.div>
+          Follow us on Instagram @the.facialspace
+        </motion.h2>
+
+        <motion.a
+          href={LINKS.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-8 inline-flex items-center justify-center gap-3 bg-spa-blue-dark px-10 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-spa-text"
+        >
+          <Instagram size={18} strokeWidth={2.2} />
+          Follow Us
+        </motion.a>
+      </div>
+
+      <div className="mt-12 grid grid-cols-2 gap-2 px-2 sm:grid-cols-3 lg:grid-cols-6">
+        {instagramPosts.map((post, index) => (
+          <motion.a
+            key={post.image}
+            href={LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
+            className="group block aspect-square overflow-hidden bg-white"
+          >
+            <img
+              src={post.image}
+              alt={post.alt}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </motion.a>
+        ))}
       </div>
     </section>
   );

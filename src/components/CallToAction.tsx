@@ -26,7 +26,7 @@ export default function CallToAction() {
             href={LINKS.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-10 py-5 bg-white text-spa-text rounded-full text-sm font-medium uppercase tracking-widest hover:bg-spa-blue-light transition-all duration-300 shadow-xl hover:-translate-y-1 hover:shadow-2xl border border-white/80"
+            className="inline-flex items-center justify-center rounded-full bg-spa-cta px-10 py-5 text-sm font-bold uppercase tracking-widest text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-spa-text hover:shadow-2xl"
           >
             Book Appointment
           </a>

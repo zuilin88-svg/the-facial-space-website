@@ -88,7 +88,7 @@ export default function Footer() {
                   href={LINKS.booking}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block w-full text-center px-6 py-3 bg-white text-spa-text rounded text-xs font-bold uppercase tracking-widest hover:bg-spa-blue-light transition-colors"
+                  className="inline-block w-full rounded bg-spa-cta px-6 py-3 text-center text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-spa-blue-dark"
                 >
                   Book Appointment
                 </a>

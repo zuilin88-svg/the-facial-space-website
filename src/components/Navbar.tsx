@@ -19,14 +19,14 @@ export default function Navbar() {
     { name: 'Home', href: '#' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Results', href: '#results' },
+    { name: 'Instagram', href: '#instagram' },
     { name: 'Products', href: '#products' },
     { name: 'Testimonials', href: '#testimonials' },
   ];
   const desktopTextClass = isScrolled
-    ? 'text-spa-text hover:text-spa-blue-dark'
+    ? 'text-white drop-shadow-sm hover:text-white/80'
     : 'text-white drop-shadow-sm hover:text-white/80';
-  const leftNavLinks = navLinks.filter((link) => ['Services', 'About', 'Results'].includes(link.name));
+  const leftNavLinks = navLinks.filter((link) => ['Services', 'About', 'Instagram'].includes(link.name));
   const rightNavLinks = navLinks.filter((link) => ['Products'].includes(link.name));
 
   useEffect(() => {
@@ -42,9 +42,15 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
-          isScrolled ? 'glass-nav border-white/30 py-4' : 'bg-transparent border-white/65 py-4'
-        }`}
+        style={{
+          background: isScrolled
+            ? 'linear-gradient(180deg, rgba(78, 152, 184, 0.98) 0%, rgba(116, 181, 207, 0.86) 44%, rgba(168, 205, 220, 0.42) 100%)'
+            : 'transparent',
+          borderBottomColor: isScrolled ? 'rgba(240, 247, 249, 0.72)' : 'transparent',
+          boxShadow: isScrolled ? '0 18px 52px rgba(78, 152, 184, 0.72)' : 'none',
+          backdropFilter: isScrolled ? 'blur(14px)' : 'none',
+        }}
+        className="fixed top-0 left-0 right-0 z-50 border-b py-4 transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-[1fr_auto_1fr] items-center gap-6">
           <nav className="hidden md:flex items-center gap-9">
@@ -63,7 +69,7 @@ export default function Navbar() {
             <span
               className={`whitespace-nowrap font-serif text-2xl tracking-wide transition-colors md:text-[32px] ${
                 isScrolled
-                  ? 'text-spa-text group-hover:text-spa-blue-dark'
+                  ? 'text-white drop-shadow-sm group-hover:text-white/85'
                   : 'text-white drop-shadow-sm group-hover:text-white/85'
               }`}
             >
@@ -105,7 +111,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className={`border px-7 py-3.5 text-xs font-bold uppercase tracking-[0.12em] transition-colors ${
                 isScrolled
-                  ? 'border-spa-text text-spa-text hover:bg-spa-text hover:text-white'
+                  ? 'border-white bg-white text-spa-text hover:bg-spa-blue-light'
                   : 'border-white text-white drop-shadow-sm hover:bg-white hover:text-spa-text'
               }`}
             >
@@ -116,7 +122,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             className={`md:hidden justify-self-end p-2 transition-colors ${
-              isScrolled ? 'text-spa-text' : 'text-white drop-shadow-sm'
+              isScrolled ? 'text-white drop-shadow-sm' : 'text-white drop-shadow-sm'
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Open menu"

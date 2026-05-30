@@ -14,11 +14,11 @@ export default function About() {
             className="w-full lg:w-1/2 relative"
           >
             <div className="absolute -inset-4 bg-spa-blue-light rounded-[32px] -z-10 transform -rotate-3"></div>
-            <div className="aspect-[4/5] rounded-[24px] overflow-hidden shadow-xl">
+            <div className="aspect-[4/5] rounded-[24px] overflow-hidden shadow-xl bg-white">
               <img
-                src="/about/about-face.jpg"
+                src="/about/acne-specialist-about-latest.jpg"
                 alt="Acne specialist consultation"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
 
@@ -79,7 +79,7 @@ export default function About() {
                 href={LINKS.booking}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-white border border-white text-spa-text px-8 py-3 rounded-full text-sm font-medium uppercase tracking-widest hover:bg-spa-blue-light transition-colors duration-300 shadow-sm"
+                className="inline-block rounded-full bg-spa-cta px-8 py-3 text-sm font-bold uppercase tracking-widest text-white shadow-sm transition-colors duration-300 hover:bg-spa-text"
               >
                 Start Your Clear Skin Journey
               </a>

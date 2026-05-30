@@ -7,10 +7,14 @@ export default function OfferPopup() {
   const [message, setMessage] = useState('');
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
     if (!LINKS.firstTreatmentOffer) {
-      event.preventDefault();
       setMessage('Add your Square signup link to connect this offer.');
+      return;
     }
+
+    window.location.href = LINKS.firstTreatmentOffer;
   };
 
   if (!isOpen) {
@@ -22,7 +26,7 @@ export default function OfferPopup() {
             setMessage('');
             setIsOpen(true);
           }}
-          className="border border-spa-blue-dark bg-white px-7 py-4 text-sm font-bold text-spa-blue-dark shadow-[0_-8px_28px_rgba(44,51,56,0.12)] transition-colors hover:bg-spa-blue-dark hover:text-white"
+          className="border border-spa-cta bg-spa-cta px-7 py-4 text-sm font-bold text-white shadow-[0_-8px_28px_rgba(44,51,56,0.12)] transition-colors hover:border-spa-text hover:bg-spa-text"
         >
           Get $10 Off
         </button>
@@ -52,8 +56,6 @@ export default function OfferPopup() {
         </div>
 
         <form
-          action={LINKS.firstTreatmentOffer || undefined}
-          method="post"
           onSubmit={handleSubmit}
           className="w-full max-w-xl md:w-[390px]"
         >
@@ -77,7 +79,7 @@ export default function OfferPopup() {
             </div>
             <button
               type="submit"
-              className="h-12 bg-spa-blue-dark px-7 text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-spa-text"
+              className="h-12 bg-spa-cta px-7 text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-spa-text"
             >
               Get $10 Off
             </button>

@@ -3,7 +3,7 @@ import { LINKS } from '../constants';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden bg-white">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden bg-spa-off-white">
       <div className="absolute inset-0 z-0">
         <img
           src="/hero/face-hero.png"
@@ -19,7 +19,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="!font-sans text-5xl md:text-6xl lg:text-7xl font-bold !text-white tracking-normal leading-[1.06] mb-6 drop-shadow-sm"
+          className="font-serif text-5xl font-normal leading-[1.08] tracking-wide !text-white drop-shadow-sm md:text-6xl lg:text-7xl"
         >
           Your clear skin era starts now
         </motion.h1>
@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-12 font-semibold leading-relaxed drop-shadow-sm"
+          className="mx-auto mb-12 mt-6 max-w-3xl text-base font-medium leading-relaxed text-white drop-shadow-sm md:text-lg"
         >
           Expert Acne Care for teens and adults with over 90% success rate.
         </motion.p>
@@ -43,14 +43,14 @@ export default function Hero() {
             href={LINKS.booking}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 bg-spa-text text-white rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:bg-spa-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="w-full sm:w-auto px-10 py-4 bg-spa-cta text-white rounded-full text-xs font-bold uppercase tracking-[0.18em] hover:bg-spa-text transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Book Appointment
           </a>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#fafafa] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-spa-off-white to-transparent z-10 pointer-events-none"></div>
     </section>
   );
 }

@@ -30,7 +30,7 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" className="py-24 bg-white">
+    <section id="products" className="py-24 bg-spa-off-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-end mb-12">
           <div>
