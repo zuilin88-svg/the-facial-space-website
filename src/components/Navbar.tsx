@@ -63,7 +63,7 @@ export default function Navbar() {
         }}
         className="fixed top-0 left-0 right-0 z-50 border-b py-4 transition-colors duration-200 md:transition-all md:duration-300"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-[1fr_auto_1fr] items-center gap-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 lg:px-8">
           <nav className="hidden md:flex items-center gap-9">
             {leftNavLinks.map((link) => (
               <a
@@ -76,7 +76,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <a href="#" className="flex items-center justify-self-center group">
+          <a href="#" className="flex items-center group md:justify-self-center">
             <span
               className={`whitespace-nowrap font-serif text-2xl tracking-wide transition-colors md:text-[32px] ${
                 isScrolled
@@ -132,7 +132,7 @@ export default function Navbar() {
 
           {/* Mobile Toggle */}
           <button
-            className={`md:hidden justify-self-end p-2 transition-colors ${
+            className={`ml-auto md:hidden p-2 transition-colors ${
               isScrolled ? 'text-white drop-shadow-sm' : 'text-white drop-shadow-sm'
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
