@@ -2,17 +2,28 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { Facebook, Instagram, MapPin, Menu, Phone, X } from 'lucide-react';
 import { CONTACT_INFO, LINKS } from '../constants';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
+    let frameId = 0;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      window.cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 48);
+      });
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const navLinks = [
@@ -47,10 +58,10 @@ export default function Navbar() {
             ? 'linear-gradient(180deg, rgba(78, 152, 184, 0.98) 0%, rgba(116, 181, 207, 0.86) 44%, rgba(168, 205, 220, 0.42) 100%)'
             : 'transparent',
           borderBottomColor: isScrolled ? 'rgba(240, 247, 249, 0.72)' : 'transparent',
-          boxShadow: isScrolled ? '0 18px 52px rgba(78, 152, 184, 0.72)' : 'none',
-          backdropFilter: isScrolled ? 'blur(14px)' : 'none',
+          boxShadow: isScrolled && !isMobile ? '0 18px 52px rgba(78, 152, 184, 0.72)' : 'none',
+          backdropFilter: isScrolled && !isMobile ? 'blur(14px)' : 'none',
         }}
-        className="fixed top-0 left-0 right-0 z-50 border-b py-4 transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-50 border-b py-4 transition-colors duration-200 md:transition-all md:duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-[1fr_auto_1fr] items-center gap-6">
           <nav className="hidden md:flex items-center gap-9">

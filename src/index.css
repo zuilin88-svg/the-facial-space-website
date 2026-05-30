@@ -32,3 +32,15 @@ h1, h2, h3, h4, h5, h6 {
 .glass-nav {
   @apply bg-white/90 backdrop-blur-lg border-b border-white/20 shadow-sm;
 }
+
+@media (max-width: 767px) {
+  .glass-panel,
+  .glass-nav {
+    backdrop-filter: none;
+  }
+
+  .group:hover img,
+  .group:hover [class*="scale"] {
+    transform: none;
+  }
+}

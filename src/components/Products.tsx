@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { LINKS } from '../constants';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const products = [
   {
@@ -29,6 +30,8 @@ const products = [
 ];
 
 export default function Products() {
+  const isMobile = useIsMobile();
+
   return (
     <section id="products" className="py-24 bg-spa-off-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -48,10 +51,10 @@ export default function Products() {
           {products.map((product, index) => (
             <motion.div
               key={product.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={isMobile ? false : { opacity: 0, y: 30 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              transition={isMobile ? undefined : { delay: index * 0.1, duration: 0.6 }}
               className="group"
             >
               <a href={product.link} target="_blank" rel="noopener noreferrer" className="block">

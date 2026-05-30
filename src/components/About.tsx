@@ -1,16 +1,19 @@
 import { motion } from 'motion/react';
 import { LINKS } from '../constants';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export default function About() {
+  const isMobile = useIsMobile();
+
   return (
     <section id="about" className="py-24 bg-spa-champagne relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={isMobile ? false : { opacity: 0, x: -30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={isMobile ? undefined : { duration: 0.8 }}
             className="w-full lg:w-1/2 relative"
           >
             <div className="absolute -inset-4 bg-spa-blue-light rounded-[32px] -z-10 transform -rotate-3"></div>
@@ -29,10 +32,10 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={isMobile ? false : { opacity: 0, x: 30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={isMobile ? undefined : { duration: 0.8, delay: 0.2 }}
             className="w-full lg:w-1/2 flex flex-col justify-center"
           >
             <div className="flex items-center gap-4 mb-6">

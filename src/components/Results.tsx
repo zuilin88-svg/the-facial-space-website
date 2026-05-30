@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Instagram } from 'lucide-react';
 import { LINKS } from '../constants';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const instagramPosts = [
   {
@@ -30,14 +31,16 @@ const instagramPosts = [
 ];
 
 export default function Results() {
+  const isMobile = useIsMobile();
+
   return (
     <section id="instagram" className="border-y border-spa-blue-dark/45 bg-spa-off-white py-20">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? false : { opacity: 0, y: 20 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={isMobile ? undefined : { duration: 0.6 }}
           className="!font-sans text-4xl font-bold tracking-normal !text-spa-blue-dark md:text-5xl"
         >
           Follow us on Instagram @the.facialspace
@@ -47,10 +50,10 @@ export default function Results() {
           href={LINKS.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? false : { opacity: 0, y: 18 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={isMobile ? undefined : { duration: 0.6, delay: 0.1 }}
           className="mt-8 inline-flex items-center justify-center gap-3 bg-spa-blue-dark px-10 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-spa-text"
         >
           <Instagram size={18} strokeWidth={2.2} />
@@ -65,10 +68,10 @@ export default function Results() {
             href={LINKS.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={isMobile ? false : { opacity: 0, y: 24 }}
+            whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
+            transition={isMobile ? undefined : { duration: 0.5, delay: index * 0.05 }}
             className="group block aspect-square overflow-hidden bg-white"
           >
             <img

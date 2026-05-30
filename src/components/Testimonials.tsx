@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Star } from 'lucide-react';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const testimonials = [
   {
@@ -20,6 +21,8 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const isMobile = useIsMobile();
+
   return (
     <section id="testimonials" className="py-24 bg-spa-off-white relative overflow-hidden">
       {/* Decorative large text behind */}
@@ -44,10 +47,10 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={isMobile ? false : { opacity: 0, y: 30 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              transition={isMobile ? undefined : { delay: index * 0.1, duration: 0.6 }}
               className="bg-white/40 backdrop-blur-md border border-spa-blue-light rounded-[24px] p-10 shadow-lg relative"
             >
                <div className="absolute -top-4 -left-4 text-6xl text-spa-blue-dark/20 font-serif leading-none">"</div>

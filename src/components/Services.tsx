@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const services = [
   {
@@ -45,13 +46,15 @@ const services = [
 ];
 
 export default function Services() {
+  const isMobile = useIsMobile();
+
   return (
     <section id="services" className="py-24 bg-[#eef2f1]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={isMobile ? false : { opacity: 0, y: 20 }}
+            whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex items-center justify-center gap-4 mb-4"
           >
@@ -60,19 +63,19 @@ export default function Services() {
             <div className="h-px w-12 bg-spa-blue-dark"></div>
           </motion.div>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={isMobile ? false : { opacity: 0, y: 20 }}
+            whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={isMobile ? undefined : { delay: 0.1 }}
             className="text-4xl md:text-5xl font-serif text-spa-text mb-6"
           >
             Curated For Your Skin
           </motion.h2>
           <motion.p
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
+             initial={isMobile ? false : { opacity: 0, y: 20 }}
+             whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             transition={{ delay: 0.2 }}
+             transition={isMobile ? undefined : { delay: 0.2 }}
              className="text-spa-text-light"
           >
             Your skin doesn't need guessing or quick fixes. Every treatment plan is personalized and evolves alongside your skin.
@@ -83,10 +86,10 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={isMobile ? false : { opacity: 0, y: 30 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              transition={isMobile ? undefined : { delay: index * 0.1, duration: 0.6 }}
               className="group relative bg-white rounded-[24px] overflow-hidden transition-all duration-500 hover:-translate-y-2 border border-[#44d5d2]/50 shadow-[0_0_0_1px_rgba(68,213,210,0.18),7px_7px_0_rgba(68,213,210,0.34),0_12px_28px_-18px_rgba(44,51,56,0.32)] hover:shadow-[0_0_0_1px_rgba(68,213,210,0.28),9px_9px_0_rgba(68,213,210,0.48),0_16px_32px_-18px_rgba(44,51,56,0.38)]"
             >
               <div className="aspect-[4/3] overflow-hidden relative">

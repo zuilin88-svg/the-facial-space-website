@@ -35,7 +35,7 @@ export default function OfferPopup() {
   }
 
   return (
-    <aside className="fixed inset-x-0 bottom-0 z-40 border-t border-spa-blue-dark bg-[#fbfaf7]/95 shadow-[0_-18px_60px_rgba(44,51,56,0.14)] backdrop-blur-md">
+    <aside className="fixed inset-x-0 bottom-0 z-40 border-t border-spa-blue-dark bg-[#fbfaf7]/95 shadow-[0_-18px_60px_rgba(44,51,56,0.14)] md:backdrop-blur-md">
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-6 py-7 md:grid-cols-[1fr_auto] lg:px-8">
         <button
           type="button"

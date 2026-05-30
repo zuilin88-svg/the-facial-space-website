@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
 import { LINKS } from '../constants';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export default function CallToAction() {
+  const isMobile = useIsMobile();
+
   return (
     <section className="py-32 bg-spa-blue-light relative overflow-hidden flex items-center justify-center">
       {/* Abstract background elements */}
@@ -12,8 +15,8 @@ export default function CallToAction() {
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? false : { opacity: 0, y: 20 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <h2 className="text-5xl md:text-7xl font-serif text-spa-text mb-8 leading-tight">
