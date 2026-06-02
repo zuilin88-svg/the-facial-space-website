@@ -72,7 +72,7 @@ export default function Results() {
             whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={isMobile ? undefined : { duration: 0.5, delay: index * 0.05 }}
-            className="group block aspect-square overflow-hidden bg-white"
+            className="group block aspect-[3/4] overflow-hidden bg-white"
           >
             <img
               src={post.image}
