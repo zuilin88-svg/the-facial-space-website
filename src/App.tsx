@@ -5,6 +5,7 @@ import Services from './components/Services';
 import Results from './components/Results';
 import Products from './components/Products';
 import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import OfferPopup from './components/OfferPopup';
@@ -16,8 +17,9 @@ export default function App() {
       <Hero />
       <Services />
       <About />
-      <Testimonials />
       <Products />
+      <Testimonials />
+      <FAQ />
       <Results />
       <CallToAction />
       <Footer />

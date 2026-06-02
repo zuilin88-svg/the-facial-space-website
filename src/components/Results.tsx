@@ -6,7 +6,7 @@ import { useIsMobile } from '../hooks/useIsMobile';
 const instagramPosts = [
   {
     image: '/instagram/instagram-01.jpg',
-    alt: 'The Facial Space client after facial experience Instagram post',
+    alt: 'The Facial Space acne journey before Instagram post',
   },
   {
     image: '/instagram/instagram-02.jpg',
@@ -14,19 +14,19 @@ const instagramPosts = [
   },
   {
     image: '/instagram/instagram-03.jpg',
-    alt: 'The Facial Space real skin no filter facial Instagram post',
+    alt: 'The Facial Space acne client before visit Instagram post',
   },
   {
     image: '/instagram/instagram-04.jpg',
-    alt: 'The Facial Space outfit of the day Instagram post',
+    alt: 'The Facial Space client after acne appointment Instagram post',
   },
   {
     image: '/instagram/instagram-05.jpg',
-    alt: 'The Facial Space studio booking tour Instagram post',
+    alt: 'The Facial Space LED acne treatment Instagram post',
   },
   {
     image: '/instagram/instagram-06.jpg',
-    alt: 'The Facial Space acne-safe skincare Instagram post',
+    alt: 'The Facial Space founder product education Instagram post',
   },
 ];
 

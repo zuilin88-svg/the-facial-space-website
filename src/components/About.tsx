@@ -40,40 +40,37 @@ export default function About() {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-spa-blue-dark"></div>
-              <span className="uppercase tracking-widest text-sm text-spa-blue-dark font-medium">Your Acne Specialist</span>
+              <span className="uppercase tracking-widest text-sm text-spa-blue-dark font-medium">Meet The Founder</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-serif text-spa-text leading-tight mb-8">
-              Professional acne care for <span className="italic text-spa-blue-dark">clear, confident skin.</span>
+              Liz turned her own acne journey into <span className="italic text-spa-blue-dark">clear-skin care for others.</span>
             </h2>
 
             <div className="space-y-6 text-spa-text-light leading-relaxed">
               <p className="text-lg text-spa-text">
-                Customized acne treatments with a 90%+ success rate.
+                Personalized, results-driven acne programs led with education and compassionate care.
               </p>
               <p>
-                At The Facial Space, we specialize exclusively in acne-focused skincare solutions designed to treat the root causes, not just the symptoms.
+                Liz, the founder of The Facial Space, turned her own personal acne journey into a passion for helping others achieve clear and healthy skin.
               </p>
               <p>
-                From teen acne and hormonal breakouts to adult acne and post-acne scarring, every treatment plan is personalized to your skin condition, lifestyle, and long-term goals.
+                With over 5 years of experience in the skincare industry, she has served more than 1,000 clients and achieved a success rate of over 90% through personalized, results-driven acne treatment programs.
               </p>
               <p>
-                Using targeted protocols and professional treatments, we help restore skin health, reduce inflammation, and create lasting transformations.
-              </p>
-              <p>
-                Clear skin starts with understanding your acne and building a plan that works.
+                At The Facial Space, Liz combines professional expertise with education and compassionate care, guiding each client through a tailored skin journey designed to deliver lasting, real results.
               </p>
             </div>
 
             <div className="mt-10 pt-10 border-t border-spa-silver flex items-center gap-8">
               <div className="flex flex-col">
-                <span className="text-3xl font-serif text-spa-text mb-1">90%+</span>
-                <span className="text-xs text-spa-text-light uppercase tracking-wider">Success Rate</span>
+                <span className="text-3xl font-serif text-spa-text mb-1">1,000+</span>
+                <span className="text-xs text-spa-text-light uppercase tracking-wider">Clients Served</span>
               </div>
               <div className="w-px h-12 bg-spa-silver"></div>
               <div className="flex flex-col">
-                <span className="text-3xl font-serif text-spa-text mb-1">Customized</span>
-                <span className="text-xs text-spa-text-light uppercase tracking-wider">Acne Programs</span>
+                <span className="text-3xl font-serif text-spa-text mb-1">5+</span>
+                <span className="text-xs text-spa-text-light uppercase tracking-wider">Years Experience</span>
               </div>
             </div>
 

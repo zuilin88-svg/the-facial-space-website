@@ -14,7 +14,6 @@ export default function Hero() {
           className="w-full h-full object-cover object-center brightness-[1.08] saturate-[1.03]"
         />
         <div className="absolute inset-0 bg-black/16"></div>
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white via-white/38 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -53,7 +52,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-spa-off-white to-transparent z-10 pointer-events-none"></div>
     </section>
   );
 }
