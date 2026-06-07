@@ -78,7 +78,7 @@ export default function Services() {
              transition={isMobile ? undefined : { delay: 0.2 }}
              className="text-spa-text-light"
           >
-            Your skin doesn't need guessing or quick fixes. Every treatment plan is personalized and evolves alongside your skin.
+            Every treatment plan is personalized and evolves alongside your skin.
           </motion.p>
         </div>
 

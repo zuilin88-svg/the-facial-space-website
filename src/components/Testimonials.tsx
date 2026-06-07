@@ -40,7 +40,7 @@ export default function Testimonials() {
             <Star fill="currentColor" size={20} />
           </div>
           <h2 className="text-3xl md:text-4xl font-serif text-spa-text mb-4">5.0 Star Rated</h2>
-          <p className="text-spa-text-light">Based on 46 Google Reviews</p>
+          <p className="text-spa-text-light">Based on Google Reviews</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

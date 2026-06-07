@@ -50,9 +50,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        initial={false}
         style={{
           background: isScrolled
             ? 'linear-gradient(180deg, rgba(78, 152, 184, 0.98) 0%, rgba(116, 181, 207, 0.86) 44%, rgba(168, 205, 220, 0.42) 100%)'
